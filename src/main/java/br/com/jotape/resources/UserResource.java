@@ -1,5 +1,6 @@
 package br.com.jotape.resources;
 
+import br.com.jotape.domain.Post;
 import br.com.jotape.domain.User;
 import br.com.jotape.dto.UserDTO;
 import br.com.jotape.service.UserService;
@@ -57,5 +58,11 @@ public class UserResource {
         obj.setId(id);
         obj = service.update(obj);
         return ResponseEntity.ok().body(obj);
+    }
+
+    @RequestMapping(value = "/posts/{id}", method = RequestMethod.GET)
+    public ResponseEntity<List<Post>> findPost(@PathVariable String id) {
+        User obj = service.findById(id);
+        return ResponseEntity.ok().body(obj.getPosts());
     }
 }
