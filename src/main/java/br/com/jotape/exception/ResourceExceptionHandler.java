@@ -17,7 +17,7 @@ public class ResourceExceptionHandler {
                 status.value(),
                 "Não encontrado",
                 e.getMessage(),
-                request.getRequestURI() );
+                request.getRequestURI());
         return ResponseEntity.status(status).body(err);
     }
 }
