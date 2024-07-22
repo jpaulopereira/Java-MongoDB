@@ -1,7 +1,6 @@
 package br.com.jotape.resources;
 
 import br.com.jotape.domain.Post;
-import br.com.jotape.domain.User;
 import br.com.jotape.repository.util.Url;
 import br.com.jotape.service.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,5 +27,12 @@ public class PostResource {
       text = Url.decodeParam(text);
       List<Post> list = postService.findByTitle(text);
       return ResponseEntity.ok().body(list);
+    }
+
+    @RequestMapping(value = "/title-search-param")
+    public ResponseEntity<List<Post>> findByTextParam(@RequestParam(value = "text", defaultValue = "") String text) {
+        text = Url.decodeParam(text);
+        List<Post> list = postService.findByTitleParam(text);
+        return ResponseEntity.ok().body(list);
     }
 }
