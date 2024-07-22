@@ -1,7 +1,7 @@
 package br.com.jotape.config;
 
-import br.com.jotape.Repository.PostRepository;
-import br.com.jotape.Repository.UserRepository;
+import br.com.jotape.repository.PostRepository;
+import br.com.jotape.repository.UserRepository;
 import br.com.jotape.domain.Post;
 import br.com.jotape.domain.User;
 import br.com.jotape.dto.AuthorDTO;

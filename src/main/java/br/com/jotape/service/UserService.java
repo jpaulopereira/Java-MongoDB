@@ -1,6 +1,6 @@
 package br.com.jotape.service;
 
-import br.com.jotape.Repository.UserRepository;
+import br.com.jotape.repository.UserRepository;
 import br.com.jotape.domain.User;
 import br.com.jotape.exception.ObjectNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
