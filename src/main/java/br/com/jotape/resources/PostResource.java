@@ -37,7 +37,7 @@ public class PostResource {
         return ResponseEntity.ok().body(list);
     }
 
-    @RequestMapping(value = "/title-search-full")
+    @RequestMapping(value = "/title-searchfull")
     public ResponseEntity<List<Post>>
     fullSearch(@RequestParam(value = "text", defaultValue = "") String text,
                @RequestParam(value = "minDate", defaultValue = "") String minDate,

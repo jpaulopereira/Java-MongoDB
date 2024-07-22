@@ -26,4 +26,5 @@ public interface PostRepository extends MongoRepository<Post, String> {
             "  ] } " +
             "] }")
     List<Post> fullSearch(String text, Date minDate, Date maxDate);
+    
 }
