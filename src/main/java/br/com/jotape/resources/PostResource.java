@@ -37,7 +37,7 @@ public class PostResource {
         return ResponseEntity.ok().body(list);
     }
 
-    @RequestMapping(value = "/title-searchfull")
+    @RequestMapping(value = "/title-search-full")
     public ResponseEntity<List<Post>>
     fullSearch(@RequestParam(value = "text", defaultValue = "") String text,
                @RequestParam(value = "minDate", defaultValue = "") String minDate,
@@ -47,5 +47,13 @@ public class PostResource {
         Date max = Utils.convertData(maxDate, new Date());
         List<Post> list = postService.fullSearch(text, min, max);
         return ResponseEntity.ok().body(list);
+    }
+
+    @GetMapping("/search")
+    public Post search(
+            @RequestParam(required = false) String title,
+            @RequestParam(required = false) String body,
+            @RequestParam(required = false) String name ) {
+        return postService.findByTitleAndBody(title, body, name);
     }
 }
